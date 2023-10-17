@@ -52,6 +52,19 @@ class Audio {
         }
     }
     
+    public func getDuration(at index: Int, completion: @escaping (_ timeInSec: Float) -> Void) {
+        Task {
+            if let url = asset?[index] {
+                let asset = AVURLAsset(url: url)
+                do { 
+                    let duration = try await asset.load(.duration)
+                    let timeInSec = Float(CMTimeGetSeconds(duration))
+                    completion(timeInSec)
+                } catch { }
+            }
+        }
+    }
+    
     public func playSong() {
         loadSound()
         player.play()

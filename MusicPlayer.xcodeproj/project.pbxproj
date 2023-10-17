@@ -102,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E129BA912ADEAA7100837C7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E129BA8D2ADEA87400837C7F /* SongPlayerViewController.swift */,
+				E129BA8F2ADEA88000837C7F /* SongPlayer.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E129BA922ADEAA7700837C7F /* SongPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E129BA912ADEAA7100837C7F /* View */,
+			);
+			path = SongPlayer;
+			sourceTree = "<group>";
+		};
 		E157340D2ADE90E300070385 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,11 +213,10 @@
 				E157340D2ADE90E300070385 /* Audio */,
 				E157340E2ADE90FE00070385 /* Lifecycle */,
 				E15734232ADE91D400070385 /* HomeLanding */,
+				E129BA922ADEAA7700837C7F /* SongPlayer */,
 				E1FC5CCF2ADE8E5F00760F98 /* Assets.xcassets */,
 				E1FC5CD12ADE8E5F00760F98 /* LaunchScreen.storyboard */,
 				E1FC5CD42ADE8E5F00760F98 /* Info.plist */,
-				E129BA8D2ADEA87400837C7F /* SongPlayerViewController.swift */,
-				E129BA8F2ADEA88000837C7F /* SongPlayer.storyboard */,
 			);
 			path = MusicPlayer;
 			sourceTree = "<group>";
@@ -542,6 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA6K73HN4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -569,6 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA6K73HN4W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

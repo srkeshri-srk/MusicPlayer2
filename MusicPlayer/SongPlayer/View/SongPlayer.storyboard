@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="80" id="6B2-8J-946"/>
                                 </constraints>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-mv-yW0">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="ieZ-mv-yW0">
                                 <rect key="frame" x="18" y="627" width="357" height="37"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,10 +92,24 @@
                                     <action selector="sliderAction:" destination="Y6W-OH-hqX" eventType="valueChanged" id="AMC-aJ-kYY"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkG-XK-rTs">
+                                <rect key="frame" x="341.66666666666669" y="663" width="31.333333333333314" height="13.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe5-TQ-4S6">
+                                <rect key="frame" x="20" y="663" width="31.333333333333329" height="13.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jkG-XK-rTs" firstAttribute="trailing" secondItem="ieZ-mv-yW0" secondAttribute="trailing" id="9Oj-SI-BzP"/>
+                            <constraint firstItem="jkG-XK-rTs" firstAttribute="top" secondItem="ieZ-mv-yW0" secondAttribute="bottom" id="C1O-NJ-bQH"/>
                             <constraint firstItem="ieZ-mv-yW0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="D3g-Im-gbH"/>
                             <constraint firstItem="7wf-Tk-FaD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DyG-7t-dKN"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DiQ-vU-PZW" secondAttribute="bottom" constant="30" id="Szh-bF-rDr"/>
@@ -103,7 +117,9 @@
                             <constraint firstItem="DiQ-vU-PZW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="WXP-CF-0ck"/>
                             <constraint firstItem="DiQ-vU-PZW" firstAttribute="top" secondItem="ieZ-mv-yW0" secondAttribute="bottom" constant="45" id="XNW-or-4S9"/>
                             <constraint firstItem="ACM-OP-rmA" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="YDO-HY-nyL"/>
+                            <constraint firstItem="oe5-TQ-4S6" firstAttribute="leading" secondItem="ieZ-mv-yW0" secondAttribute="leading" id="YJ1-0H-Ltk"/>
                             <constraint firstItem="ieZ-mv-yW0" firstAttribute="top" secondItem="ACM-OP-rmA" secondAttribute="bottom" constant="45" id="dzl-kE-CVc"/>
+                            <constraint firstItem="oe5-TQ-4S6" firstAttribute="top" secondItem="ieZ-mv-yW0" secondAttribute="bottom" id="eEH-MY-1Qe"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ieZ-mv-yW0" secondAttribute="trailing" constant="20" id="eb0-Op-jZg"/>
                             <constraint firstItem="7wf-Tk-FaD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="egI-qM-cd9"/>
                             <constraint firstItem="7wf-Tk-FaD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="mgd-mc-Diz"/>
@@ -114,8 +130,10 @@
                     <connections>
                         <outlet property="artistLabel" destination="vp6-KX-KYM" id="kCW-bX-e1C"/>
                         <outlet property="artworkImageView" destination="7wf-Tk-FaD" id="VPX-KH-PY8"/>
+                        <outlet property="endingTimeLabel" destination="jkG-XK-rTs" id="H5o-JF-fAv"/>
                         <outlet property="playerStateButton" destination="Bc0-m7-pSK" id="aFI-qv-AJ6"/>
                         <outlet property="slider" destination="ieZ-mv-yW0" id="LU5-DM-mhG"/>
+                        <outlet property="startingTimeLabel" destination="oe5-TQ-4S6" id="Mw5-rs-6je"/>
                         <outlet property="titleLabel" destination="dfe-9D-Cdv" id="JJz-XS-Bgg"/>
                     </connections>
                 </viewController>

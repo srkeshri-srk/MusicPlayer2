@@ -14,6 +14,8 @@ class SongPlayerViewController: UIViewController {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var playerStateButton: UIButton!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var startingTimeLabel: UILabel!
+    @IBOutlet weak var endingTimeLabel: UILabel!
     
     var audio = Audio()
     
@@ -31,6 +33,7 @@ class SongPlayerViewController: UIViewController {
     
     private func setupUI() {
         slider.thumbTintColor = .clear
+        slider.value = 0.0
     }
     
     private func configureUI() {
@@ -41,6 +44,17 @@ class SongPlayerViewController: UIViewController {
                 weakSelf.artworkImageView.image = UIImage(data: info.artwork)
             }
         })
+        
+        audio.getDuration(at: audio.indexPath.row) { [weak self] timeInSec in
+            if let weakSelf = self {
+                DispatchQueue.main.async {
+                    weakSelf.slider.value = 0.0
+                    weakSelf.slider.maximumValue = timeInSec/60
+                    weakSelf.startingTimeLabel.text = "00:00"
+                    weakSelf.endingTimeLabel.text = String(format: "%.2f", timeInSec/60)
+                }
+            }
+        }
     }
     
     private func stopPlayerForcely() {
@@ -65,10 +79,18 @@ class SongPlayerViewController: UIViewController {
     }
     
     @IBAction func leftButtonAction(_ sender: UIButton) {
+        if audio.indexPath.row > 0 {
+            audio.indexPath.row -= 1
+            configureUI()
+        }
     }
     
     
     @IBAction func rightButtonAction(_ sender: UIButton) {
+        if audio.indexPath.row < audio.count - 1 {
+            audio.indexPath.row += 1
+            configureUI()
+        }
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
