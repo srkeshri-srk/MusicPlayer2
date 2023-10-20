@@ -59,16 +59,16 @@ class SongPlayerViewController: UIViewController {
     
     private func stopPlayerForcely() {
         audio.stopSong()
-        playerStateButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
+        playerStateButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
     }
     
     private func playerStateToggle() {
         if audio.playerState {
             audio.stopSong()
-            playerStateButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
+            playerStateButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
         } else {
             audio.playSong()
-            playerStateButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
+            playerStateButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
         }
     }
     
