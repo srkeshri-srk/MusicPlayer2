@@ -20,12 +20,16 @@ final class AudioManager {
     static let shared = AudioManager()
     
     private var player = AVAudioPlayer()
-    var url: URL?
+    private var url: URL?
     var isPlaying: Bool {
         return player.isPlaying
     }
     
     private init() { }
+    
+    func setup(_ url: URL) {
+        self.url = url
+    }
     
     private func extractMetadata(from asset: AVURLAsset) async -> [AVMetadataKey : Any]? {
         do {
