@@ -17,7 +17,6 @@
 		E157340A2ADE90D100070385 /* UnkiAadatSi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E15734032ADE90D000070385 /* UnkiAadatSi.mp3 */; };
 		E157340B2ADE90D100070385 /* JaanaHaiTohJa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E15734042ADE90D100070385 /* JaanaHaiTohJa.mp3 */; };
 		E157341E2ADE91AC00070385 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157341D2ADE91AC00070385 /* ViewModel.swift */; };
-		E15734212ADE91C100070385 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15734202ADE91C100070385 /* Model.swift */; };
 		E18A038B2ADE93B800A10632 /* HomeLanding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18A038A2ADE93B800A10632 /* HomeLanding.storyboard */; };
 		E18A038D2ADE93C900A10632 /* HomeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A038C2ADE93C900A10632 /* HomeLandingViewController.swift */; };
 		E1B9772F2AE460700095A5E9 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9772E2AE460700095A5E9 /* AudioManager.swift */; };
@@ -63,7 +62,6 @@
 		E15734032ADE90D000070385 /* UnkiAadatSi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UnkiAadatSi.mp3; sourceTree = "<group>"; };
 		E15734042ADE90D100070385 /* JaanaHaiTohJa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = JaanaHaiTohJa.mp3; sourceTree = "<group>"; };
 		E157341D2ADE91AC00070385 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		E15734202ADE91C100070385 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E18A038A2ADE93B800A10632 /* HomeLanding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLanding.storyboard; sourceTree = "<group>"; };
 		E18A038C2ADE93C900A10632 /* HomeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLandingViewController.swift; sourceTree = "<group>"; };
 		E1B9772E2AE460700095A5E9 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
@@ -173,18 +171,9 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		E15734222ADE91C400070385 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E15734202ADE91C100070385 /* Model.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E15734232ADE91D400070385 /* HomeLanding */ = {
 			isa = PBXGroup;
 			children = (
-				E15734222ADE91C400070385 /* Model */,
 				E157341F2ADE91B400070385 /* ViewModel */,
 				E15734132ADE914F00070385 /* View */,
 			);
@@ -411,7 +400,6 @@
 				E1B977372AE465E10095A5E9 /* HomeLandingViewModel.swift in Sources */,
 				E1B9772F2AE460700095A5E9 /* AudioManager.swift in Sources */,
 				E1FC5CC72ADE8E5D00760F98 /* AppDelegate.swift in Sources */,
-				E15734212ADE91C100070385 /* Model.swift in Sources */,
 				E1B977332AE465770095A5E9 /* AudioEntity.swift in Sources */,
 				E1BEB5262ADE956A009C8B31 /* SongArtworkTableViewCell.swift in Sources */,
 				E1FC5CC92ADE8E5D00760F98 /* SceneDelegate.swift in Sources */,
