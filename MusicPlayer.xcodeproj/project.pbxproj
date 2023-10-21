@@ -20,6 +20,10 @@
 		E15734212ADE91C100070385 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15734202ADE91C100070385 /* Model.swift */; };
 		E18A038B2ADE93B800A10632 /* HomeLanding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18A038A2ADE93B800A10632 /* HomeLanding.storyboard */; };
 		E18A038D2ADE93C900A10632 /* HomeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18A038C2ADE93C900A10632 /* HomeLandingViewController.swift */; };
+		E1B9772F2AE460700095A5E9 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9772E2AE460700095A5E9 /* AudioManager.swift */; };
+		E1B977312AE4643C0095A5E9 /* AudioAssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B977302AE4643C0095A5E9 /* AudioAssetManager.swift */; };
+		E1B977332AE465770095A5E9 /* AudioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B977322AE465770095A5E9 /* AudioEntity.swift */; };
+		E1B977372AE465E10095A5E9 /* HomeLandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B977362AE465E10095A5E9 /* HomeLandingViewModel.swift */; };
 		E1BEB5262ADE956A009C8B31 /* SongArtworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BEB5242ADE956A009C8B31 /* SongArtworkTableViewCell.swift */; };
 		E1BEB5272ADE956A009C8B31 /* SongArtworkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1BEB5252ADE956A009C8B31 /* SongArtworkTableViewCell.xib */; };
 		E1FC5CC72ADE8E5D00760F98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC5CC62ADE8E5D00760F98 /* AppDelegate.swift */; };
@@ -62,6 +66,10 @@
 		E15734202ADE91C100070385 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E18A038A2ADE93B800A10632 /* HomeLanding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeLanding.storyboard; sourceTree = "<group>"; };
 		E18A038C2ADE93C900A10632 /* HomeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLandingViewController.swift; sourceTree = "<group>"; };
+		E1B9772E2AE460700095A5E9 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		E1B977302AE4643C0095A5E9 /* AudioAssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAssetManager.swift; sourceTree = "<group>"; };
+		E1B977322AE465770095A5E9 /* AudioEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEntity.swift; sourceTree = "<group>"; };
+		E1B977362AE465E10095A5E9 /* HomeLandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLandingViewModel.swift; sourceTree = "<group>"; };
 		E1BEB5242ADE956A009C8B31 /* SongArtworkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongArtworkTableViewCell.swift; sourceTree = "<group>"; };
 		E1BEB5252ADE956A009C8B31 /* SongArtworkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongArtworkTableViewCell.xib; sourceTree = "<group>"; };
 		E1FC5CC32ADE8E5D00760F98 /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,13 +130,8 @@
 		E157340D2ADE90E300070385 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				E15734002ADE90D000070385 /* ChaleyaJawan.mp3 */,
-				E15734022ADE90D000070385 /* HuaMainAnimal.mp3 */,
-				E15734042ADE90D100070385 /* JaanaHaiTohJa.mp3 */,
-				E15733FF2ADE90D000070385 /* MannLaage.mp3 */,
-				E15734012ADE90D000070385 /* SanuEkPal.mp3 */,
-				E15734032ADE90D000070385 /* UnkiAadatSi.mp3 */,
-				E15733FE2ADE90D000070385 /* AtrangiKissa.mp3 */,
+				E1B977352AE465B20095A5E9 /* Manager */,
+				E1B977342AE4659B0095A5E9 /* Assets */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E157341D2ADE91AC00070385 /* ViewModel.swift */,
+				E1B977362AE465E10095A5E9 /* HomeLandingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,6 +189,30 @@
 				E15734132ADE914F00070385 /* View */,
 			);
 			path = HomeLanding;
+			sourceTree = "<group>";
+		};
+		E1B977342AE4659B0095A5E9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E15734002ADE90D000070385 /* ChaleyaJawan.mp3 */,
+				E15734022ADE90D000070385 /* HuaMainAnimal.mp3 */,
+				E15734042ADE90D100070385 /* JaanaHaiTohJa.mp3 */,
+				E15733FF2ADE90D000070385 /* MannLaage.mp3 */,
+				E15734012ADE90D000070385 /* SanuEkPal.mp3 */,
+				E15734032ADE90D000070385 /* UnkiAadatSi.mp3 */,
+				E15733FE2ADE90D000070385 /* AtrangiKissa.mp3 */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E1B977352AE465B20095A5E9 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E1B9772E2AE460700095A5E9 /* AudioManager.swift */,
+				E1B977302AE4643C0095A5E9 /* AudioAssetManager.swift */,
+				E1B977322AE465770095A5E9 /* AudioEntity.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		E1FC5CBA2ADE8E5D00760F98 = {
@@ -380,11 +408,15 @@
 			files = (
 				E157341E2ADE91AC00070385 /* ViewModel.swift in Sources */,
 				E129BA8E2ADEA87400837C7F /* SongPlayerViewController.swift in Sources */,
+				E1B977372AE465E10095A5E9 /* HomeLandingViewModel.swift in Sources */,
+				E1B9772F2AE460700095A5E9 /* AudioManager.swift in Sources */,
 				E1FC5CC72ADE8E5D00760F98 /* AppDelegate.swift in Sources */,
 				E15734212ADE91C100070385 /* Model.swift in Sources */,
+				E1B977332AE465770095A5E9 /* AudioEntity.swift in Sources */,
 				E1BEB5262ADE956A009C8B31 /* SongArtworkTableViewCell.swift in Sources */,
 				E1FC5CC92ADE8E5D00760F98 /* SceneDelegate.swift in Sources */,
 				E18A038D2ADE93C900A10632 /* HomeLandingViewController.swift in Sources */,
+				E1B977312AE4643C0095A5E9 /* AudioAssetManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,8 @@ class SongArtworkTableViewCell: UITableViewCell {
         artworkImageView.image = nil
     }
     
-    func configureUI(info: SongInfoDetails) {
+    func configureUI(info: SongInfoDetails?) {
+        guard let info else { return }
         reset()
         titlelabel.text = info.title
         artistLabel.text = info.artist
