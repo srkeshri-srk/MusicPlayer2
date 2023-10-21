@@ -34,7 +34,7 @@ class Audio {
                     var artist = String()
                     var artworkData = Data()
                     
-                    if let _title = metadata[.commonKeyTitle] as? String {
+                    if let titleValue = metadata[.commonKeyTitle] as? String, let _title = titleValue.components(separatedBy: "-").first {
                         title = _title
                     }
                     

@@ -38,21 +38,19 @@ class SongPlayerViewController: UIViewController {
     
     private func configureUI() {
         audio.getInfo(at: audio.indexPath.row, completion: { [weak self] info in
-            if let weakSelf = self {
-                weakSelf.titleLabel.text = info.title
-                weakSelf.artistLabel.text = info.artist
-                weakSelf.artworkImageView.image = UIImage(data: info.artwork)
-            }
+            guard let self = self else { return }
+            self.titleLabel.text = info.title
+            self.artistLabel.text = info.artist
+            self.artworkImageView.image = UIImage(data: info.artwork)
         })
         
         audio.getDuration(at: audio.indexPath.row) { [weak self] timeInSec in
-            if let weakSelf = self {
-                DispatchQueue.main.async {
-                    weakSelf.slider.value = 0.0
-                    weakSelf.slider.maximumValue = timeInSec/60
-                    weakSelf.startingTimeLabel.text = "00:00"
-                    weakSelf.endingTimeLabel.text = String(format: "%.2f", timeInSec/60)
-                }
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.slider.value = 0.0
+                self.slider.maximumValue = timeInSec/60
+                self.startingTimeLabel.text = "00:00"
+                self.endingTimeLabel.text = String(format: "%.2f", timeInSec/60)
             }
         }
     }
