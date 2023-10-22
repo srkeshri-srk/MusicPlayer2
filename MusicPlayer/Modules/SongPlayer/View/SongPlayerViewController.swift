@@ -18,6 +18,8 @@ class SongPlayerViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var startingTimeLabel: UILabel!
     @IBOutlet weak var endingTimeLabel: UILabel!
+    @IBOutlet weak var artworkOuterView: UIView!
+    
     
     var songPlayerViewModel = SongPlayerViewModel.build()
     
@@ -66,6 +68,7 @@ private extension SongPlayerViewController {
     func setupUI() {
         slider.thumbTintColor = .clear
         slider.value = 0.0
+        artworkImageView.applyshadowWithCorner(containerView: artworkOuterView, cornerRadious: 8.0)
     }
     
     func configureUI() {
@@ -89,7 +92,7 @@ private extension SongPlayerViewController {
         if songPlayerViewModel.indexPath.row == 0 {
             leftPlayButton.isEnabled = false
             rightPlayButton.isEnabled = true
-        } else if songPlayerViewModel.indexPath.row == songPlayerViewModel.count - 1{
+        } else if songPlayerViewModel.indexPath.row == songPlayerViewModel.count - 1 {
             leftPlayButton.isEnabled = true
             rightPlayButton.isEnabled = false
         } else {
