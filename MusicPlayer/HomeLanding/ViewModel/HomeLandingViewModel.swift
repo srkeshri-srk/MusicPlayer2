@@ -25,33 +25,6 @@ final class HomeLandingViewModel {
             AudioManager.shared.getInfo(completion: completion)
         }
     }
-    
-    func getDuration(of index: Int, completion: @escaping (_ timeInSec: Float) -> Void) {
-        if let url = audioAsset.asset?[index] {
-            AudioManager.shared.setup(url)
-            AudioManager.shared.getDuration(completion: completion)
-        }
-    }
-    
-    func playAudio(of index: Int) {
-        if let url = audioAsset.asset?[index] {
-            AudioManager.shared.setup(url)
-            AudioManager.shared.playAudio()
-        }
-    }
-    
-    func playAudio(of index: Int, at time: TimeInterval) {
-        if let url = audioAsset.asset?[index] {
-            AudioManager.shared.setup(url)
-            AudioManager.shared.playAudio(at: time)
-        }
-    }
-    
-    func stopAudio() {
-        if AudioManager.shared.isPlaying {
-            AudioManager.shared.stopAudio()
-        }
-    }
 }
 
 extension HomeLandingViewModel: Buildable {

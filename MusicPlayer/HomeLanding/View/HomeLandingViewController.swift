@@ -51,16 +51,9 @@ extension HomeLandingViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if indexPath.row % 2 == 0 {
-            homeLandingViewModel.playAudio(of: indexPath.row)
-        } else {
-            homeLandingViewModel.stopAudio()
-        }
-        
-//        let storyboard: UIStoryboard = UIStoryboard(name: "SongPlayer", bundle: nil)
-//        let vc: SongPlayerViewController = storyboard.instantiateViewController(withIdentifier: "SongPlayerViewController") as! SongPlayerViewController
-//        vc.audio = audio
-//        vc.audio.indexPath = indexPath
-//        self.present(vc, animated: true, completion: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "SongPlayer", bundle: nil)
+        let vc: SongPlayerViewController = storyboard.instantiateViewController(withIdentifier: "SongPlayerViewController") as! SongPlayerViewController
+        vc.songPlayerViewModel.indexPath = indexPath
+        self.present(vc, animated: true, completion: nil)
     }
 }

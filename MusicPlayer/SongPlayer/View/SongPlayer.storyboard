@@ -49,9 +49,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSk-ti-v3q" userLabel="leftButton">
-                                                <rect key="frame" x="14" y="15" width="50" height="50"/>
+                                                <rect key="frame" x="19" y="20" width="40" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="AG9-jR-DuA"/>
+                                                    <constraint firstAttribute="height" constant="40" id="AG9-jR-DuA"/>
                                                     <constraint firstAttribute="width" secondItem="YSk-ti-v3q" secondAttribute="height" multiplier="1:1" id="FNe-JO-EJJ"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,10 +85,10 @@
                                         <rect key="frame" x="215.33333333333331" y="0.0" width="77.666666666666686" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po7-jX-Pv8" userLabel="rightButton">
-                                                <rect key="frame" x="14" y="15" width="50" height="50"/>
+                                                <rect key="frame" x="19" y="20" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="po7-jX-Pv8" secondAttribute="height" id="H4T-b4-Vvz"/>
-                                                    <constraint firstAttribute="height" constant="50" id="fDp-L2-BXj"/>
+                                                    <constraint firstAttribute="height" constant="40" id="fDp-L2-BXj"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -158,7 +158,9 @@
                         <outlet property="artistLabel" destination="vp6-KX-KYM" id="kCW-bX-e1C"/>
                         <outlet property="artworkImageView" destination="7wf-Tk-FaD" id="VPX-KH-PY8"/>
                         <outlet property="endingTimeLabel" destination="jkG-XK-rTs" id="H5o-JF-fAv"/>
+                        <outlet property="leftPlayButton" destination="YSk-ti-v3q" id="gwb-2A-6c0"/>
                         <outlet property="playerStateButton" destination="Bc0-m7-pSK" id="aFI-qv-AJ6"/>
+                        <outlet property="rightPlayButton" destination="po7-jX-Pv8" id="zHy-wN-4fy"/>
                         <outlet property="slider" destination="ieZ-mv-yW0" id="LU5-DM-mhG"/>
                         <outlet property="startingTimeLabel" destination="oe5-TQ-4S6" id="Mw5-rs-6je"/>
                         <outlet property="titleLabel" destination="dfe-9D-Cdv" id="JJz-XS-Bgg"/>
