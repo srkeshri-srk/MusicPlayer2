@@ -28,7 +28,10 @@ class SongPlayerViewController: UIViewController {
 
         setupUI()
         configureUI()
-        playPlayer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupPlayer()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -42,20 +45,16 @@ class SongPlayerViewController: UIViewController {
     }
     
     @IBAction func leftButtonAction(_ sender: UIButton) {
-        if songPlayerViewModel.indexPath.row > 0 {
-            songPlayerViewModel.indexPath.row -= 1
-            playPlayer()
-            configureUI()
-        }
+        songPlayerViewModel.indexDecrement()
+        configureUI()
+        setupPlayer()
     }
     
     
     @IBAction func rightButtonAction(_ sender: UIButton) {
-        if songPlayerViewModel.indexPath.row < songPlayerViewModel.count - 1 {
-            songPlayerViewModel.indexPath.row += 1
-            playPlayer()
-            configureUI()
-        }
+        songPlayerViewModel.indexIncrement()
+        configureUI()
+        setupPlayer()
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -72,14 +71,14 @@ private extension SongPlayerViewController {
     }
     
     func configureUI() {
-        songPlayerViewModel.getInfo(of: songPlayerViewModel.indexPath.row) { [weak self] info in
+        songPlayerViewModel.getInfo(of: songPlayerViewModel.getIndex) { [weak self] info in
             guard let self = self else { return }
             self.titleLabel.text = info?.title
             self.artistLabel.text = info?.artist
             self.artworkImageView.image = UIImage(data: info?.artwork ?? Data())
         }
         
-        songPlayerViewModel.getDuration(of: songPlayerViewModel.indexPath.row) { [weak self] timeInSec in
+        songPlayerViewModel.getDuration(of: songPlayerViewModel.getIndex) { [weak self] timeInSec in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.slider.value = 0.0
@@ -89,10 +88,10 @@ private extension SongPlayerViewController {
             }
         }
         
-        if songPlayerViewModel.indexPath.row == 0 {
+        if songPlayerViewModel.getIndex == 0 {
             leftPlayButton.isEnabled = false
             rightPlayButton.isEnabled = true
-        } else if songPlayerViewModel.indexPath.row == songPlayerViewModel.count - 1 {
+        } else if songPlayerViewModel.getIndex == songPlayerViewModel.count - 1 {
             leftPlayButton.isEnabled = true
             rightPlayButton.isEnabled = false
         } else {
@@ -101,22 +100,30 @@ private extension SongPlayerViewController {
         }
     }
     
+    func setupPlayer() {
+        if let url = songPlayerViewModel.audioAsset.asset?[songPlayerViewModel.getIndex] {
+            AudioManager.shared.setup(url)
+            playPlayer()
+        }
+    }
+    
     func stopPlayer() {
         AudioManager.shared.stopAudio()
+    }
+    
+    func pausePlayer() {
+        AudioManager.shared.pauseAudio()
         playerStateButton.setImage(UIImage(systemName: "play.circle.fill"), for: .normal)
     }
     
     func playPlayer() {
-        if let url = songPlayerViewModel.audioAsset.asset?[songPlayerViewModel.indexPath.row] {
-            AudioManager.shared.setup(url)
-            AudioManager.shared.playAudio()
-        }
+        AudioManager.shared.playAudio()
         playerStateButton.setImage(UIImage(systemName: "pause.circle.fill"), for: .normal)
     }
     
     func playerStateToggle() {
         if AudioManager.shared.isPlaying {
-            stopPlayer()
+            pausePlayer()
         } else {
             playPlayer()
         }

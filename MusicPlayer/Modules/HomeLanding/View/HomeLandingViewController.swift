@@ -53,7 +53,7 @@ extension HomeLandingViewController: UITableViewDelegate, UITableViewDataSource 
         
         let storyboard: UIStoryboard = UIStoryboard(name: "SongPlayer", bundle: nil)
         let vc: SongPlayerViewController = storyboard.instantiateViewController(withIdentifier: "SongPlayerViewController") as! SongPlayerViewController
-        vc.songPlayerViewModel.indexPath = indexPath
+        vc.songPlayerViewModel.setIndex(indexPath: indexPath)
         self.present(vc, animated: true, completion: nil)
     }
 }

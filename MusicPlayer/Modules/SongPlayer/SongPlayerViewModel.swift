@@ -10,7 +10,11 @@ import Foundation
 
 final class SongPlayerViewModel {
     let audioAsset: AudioAssetManager
-    var indexPath: IndexPath
+    private var indexPath: IndexPath
+    
+    var getIndex: Int {
+        return indexPath.row
+    }
     
     var count: Int {
         return audioAsset.asset?.count ?? 0
@@ -32,6 +36,22 @@ final class SongPlayerViewModel {
         if let url = audioAsset.asset?[index] {
             AudioManager.shared.setup(url)
             AudioManager.shared.getDuration(completion: completion)
+        }
+    }
+     
+    func setIndex(indexPath: IndexPath) {
+        self.indexPath = indexPath
+    }
+    
+    func indexIncrement() {
+        if getIndex < count {
+            indexPath.row += 1
+        }
+    }
+    
+    func indexDecrement() {
+        if getIndex > 0 {
+            indexPath.row -= 1
         }
     }
 }

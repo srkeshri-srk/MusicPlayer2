@@ -29,6 +29,7 @@ final class AudioManager {
     
     func setup(_ url: URL) {
         self.url = url
+        loadAudio()
     }
     
     private func extractMetadata(from asset: AVURLAsset) async -> [AVMetadataKey : Any]? {
@@ -109,19 +110,17 @@ final class AudioManager {
     }
     
     func playAudio() {
-        stopAudio {
-            self.loadAudio()
-            self.player.play()
-        }
+        self.player.play()
     }
     
     func playAudio(at time: TimeInterval) {
-        stopAudio {
-            self.loadAudio()
-            self.player.play(atTime: time)
-        }
+        self.player.play(atTime: time)
     }
-
+    
+    func pauseAudio() {
+        self.player.pause()
+    }
+    
     func stopAudio(completion: (() -> Void)? = nil) {
         if player.isPlaying {
             player.stop()
