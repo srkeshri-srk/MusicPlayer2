@@ -11,7 +11,7 @@ class HomeLandingViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
     
-    var homeLandingViewModel = HomeLandingViewModel()
+    var homeLandingViewModel = HomeLandingViewModel.build()
     
     override func viewDidLoad() {
         super.viewDidLoad()

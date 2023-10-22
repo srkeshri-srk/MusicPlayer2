@@ -7,19 +7,28 @@
 
 import Foundation
 
+protocol Buildable {
+    static func build() -> Self
+}
+
 
 final class AudioAssetManager {
-    var asset: [URL]?
+    private(set) var asset: [URL]?
     
-    init() {
-        self.asset = Song.allCases.lazy.compactMap{ loadMP3Asset(file: $0.rawValue) }
+    init(asset: [URL]) {
+        self.asset = asset
     }
-    
-    private func loadMP3Asset(file: String) -> URL {
-        if let mp3FilePath = Bundle.main.url(forResource: file, withExtension: "mp3") {
-            return mp3FilePath
-        } else {
-            return URL(fileURLWithPath: "")
-        }
+}
+
+//Builder Function
+extension AudioAssetManager: Buildable {
+    static func build() -> AudioAssetManager {
+        AudioAssetManager(asset: Song.allAssets)
+    }
+}
+
+private extension Song {
+    static var allAssets: [URL] {
+        Song.allCases.lazy.compactMap({ Bundle.main.url(forResource: $0.rawValue, withExtension: "mp3") })
     }
 }

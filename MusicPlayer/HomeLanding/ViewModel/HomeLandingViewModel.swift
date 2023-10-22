@@ -8,8 +8,12 @@
 import Foundation
 
 
-class HomeLandingViewModel {
-    let audioAsset = AudioAssetManager()
+final class HomeLandingViewModel {
+    let audioAsset: AudioAssetManager
+    
+    init(audioAsset: AudioAssetManager) {
+        self.audioAsset = audioAsset
+    }
     
     var count: Int {
         return audioAsset.asset?.count ?? 0
@@ -47,5 +51,11 @@ class HomeLandingViewModel {
         if AudioManager.shared.isPlaying {
             AudioManager.shared.stopAudio()
         }
+    }
+}
+
+extension HomeLandingViewModel: Buildable {
+    static func build() -> HomeLandingViewModel {
+        HomeLandingViewModel(audioAsset: .build())
     }
 }
