@@ -59,6 +59,8 @@ class SongPlayerViewController: UIViewController {
     
     @IBAction func sliderAction(_ sender: UISlider) {
         print(sender.value)
+        startingTimeLabel.text = String(format: "%.2f", sender.value)
+        AudioManager.shared.playAudio(at: TimeInterval(sender.value))
     }
     
 }
@@ -71,22 +73,23 @@ private extension SongPlayerViewController {
     }
     
     func configureUI() {
-        songPlayerViewModel.getInfo(of: songPlayerViewModel.getIndex) { [weak self] info in
-            guard let self = self else { return }
-            self.titleLabel.text = info?.title
-            self.artistLabel.text = info?.artist
-            self.artworkImageView.image = UIImage(data: info?.artwork ?? Data())
-        }
-        
-        songPlayerViewModel.getDuration(of: songPlayerViewModel.getIndex) { [weak self] timeInSec in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                self.slider.value = 0.0
-                self.slider.maximumValue = timeInSec/60
-                self.startingTimeLabel.text = "00:00"
-                self.endingTimeLabel.text = String(format: "-%.2f", timeInSec/60)
-            }
-        }
+//        songPlayerViewModel.getInfo(of: songPlayerViewModel.getIndex) { [weak self] info in
+//            guard let self = self else { return }
+//            self.titleLabel.text = info?.title
+//            self.artistLabel.text = info?.artist
+//            self.artworkImageView.image = UIImage(data: info?.artwork ?? Data())
+//        }
+//        
+//        songPlayerViewModel.getDuration(of: songPlayerViewModel.getIndex) { [weak self] timeInSec in
+//            guard let self = self else { return }
+//            DispatchQueue.main.async {
+//                self.slider.value = 0.0
+//                self.slider.minimumValue = 0.0
+//                self.slider.maximumValue = timeInSec/60
+//                self.startingTimeLabel.text = "00:00"
+//                self.endingTimeLabel.text = String(format: "%.2f", timeInSec/60)
+//            }
+//        }
         
         if songPlayerViewModel.getIndex == 0 {
             leftPlayButton.isEnabled = false

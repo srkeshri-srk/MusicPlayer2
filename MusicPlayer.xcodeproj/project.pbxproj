@@ -122,8 +122,8 @@
 		E129BA922ADEAA7700837C7F /* SongPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				E129BA912ADEAA7100837C7F /* View */,
 				E19F98112AE5236400B25D75 /* SongPlayerViewModel.swift */,
+				E129BA912ADEAA7100837C7F /* View */,
 			);
 			path = SongPlayer;
 			sourceTree = "<group>";

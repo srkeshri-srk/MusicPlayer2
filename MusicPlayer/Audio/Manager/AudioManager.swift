@@ -110,15 +110,15 @@ final class AudioManager {
     }
     
     func playAudio() {
-        self.player.play()
+        player.play()
     }
     
     func playAudio(at time: TimeInterval) {
-        self.player.play(atTime: time)
+        player.play(atTime: player.deviceCurrentTime + time)
     }
     
     func pauseAudio() {
-        self.player.pause()
+        player.pause()
     }
     
     func stopAudio(completion: (() -> Void)? = nil) {
